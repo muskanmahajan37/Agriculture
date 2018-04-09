@@ -16,8 +16,30 @@
             padding:0px !important
          }
       </style>    
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+         
+var count=0;
+function myFunction()
+{
+  
+  if(count%2==0)
+      {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', "http://192.168.43.42/led2", true);
+          xhr.send();
+          count++;
+      }
+    else
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "http://192.168.43.42/led1", true);
+            xhr.send();
+            count++;
+        }
+}
+</script> 
+      
 
    </head>
    
@@ -41,7 +63,7 @@
             <div class="switch">
              <label>
                Activate Automatic Mode
-               <input type="checkbox">
+               <input type="checkbox" onclick="myFunction()">
                <span class="lever"></span>
                
              </label>
